@@ -6,6 +6,7 @@ import {Puma} from "./components/pages/Puma";
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
 import {NavWrapper} from "./components/_style";
+import {Model} from "./components/pages/Model";
 
 
 const PATH = {
@@ -33,13 +34,15 @@ function App() {
                 </div>
                 <div className={s.content}>
                     <Routes>
-                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path="/" element={<Navigate to={'/adidas'}/>}/>
 
+                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
+                        <Route path="/adidas/:id" element={<Model/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
+                        <Route path={'/*'} element={<Error404/>}/>
 
                     </Routes>
                 </div>

@@ -51,12 +51,9 @@ export const Adidas = () => {
                 alignItems: 'center',
                 margin: '20px'
             }}>
-
                 {adidasArr.map((el) => {
                     return (
-                        <Link key={
-                            el.id
-                        } to={`/adidas/${el.id}`}>
+                        <Link key={el.id} to={`/adidas/${el.id}`}>
                             <div>
                                 <img src={el.picture} width='300px' height='auto' alt={el.model}/>
                             </div>
