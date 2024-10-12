@@ -35,11 +35,14 @@ function App() {
                 <div className={s.content}>
                     <Routes>
                         <Route path="/" element={<Navigate to={'/adidas'}/>}/>
-
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path="/adidas/:id" element={<Model/>}/>
+
                         <Route path={PATH.PUMA} element={<Puma/>}/>
+                        {/*<Route path="/puma/:id" element={<Model/>}/>*/}
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
+
+                        <Route path="/model/:id" element={<Model/>}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
                         <Route path={'/*'} element={<Error404/>}/>

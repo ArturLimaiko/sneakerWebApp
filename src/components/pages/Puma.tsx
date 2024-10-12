@@ -1,9 +1,64 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import pumaModel1 from '../../assets/Puma/krossovki-puma-trinity-open-road-393361-02-3-1000x800.jpg'
+import pumaModel2 from '../../assets/Puma/kedy-puma-suede-classic-xxi-374915-01-20-1000x800.jpg'
+import pumaModel3 from '../../assets/Puma/krossovki-puma-trinity-mid-hybrid-leather-393985-02-3-1000x800.jpg'
+
+export type PumaItem = {
+    id: number
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+}
+
+export const pumaArr: PumaItem[] = [
+    {
+        id: 1,
+        model: 'PUMA TRXN',
+        collection: 'new collection1',
+        price: '400300$',
+        picture: pumaModel1,
+
+    },
+    {
+        id: 2,
+        model: 'PUMA ADIFOM SUPER',
+        collection: 'new collection22',
+        price: '2990300$',
+        picture: pumaModel2,
+    },
+    {
+        id: 3,
+        model: 'PUMA SUPER KROSS',
+        collection: 'new collection333',
+        price: '123400$',
+        picture: pumaModel3,
+    }
+]
 
 export const Puma = () => {
     return (
         <div>
             <h2>PUMA</h2>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '50px',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                margin: '20px'
+            }}>
+                {pumaArr.map((puma) => {
+                    return(
+                        <Link key={puma.id} to={`/puma/${puma.id}`}>
+                            <div>
+                                <img src={puma.picture} width='300px' height='auto' alt={puma.model}/>
+                            </div>
+                        </Link>
+                    )
+                })}
+            </div>
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
