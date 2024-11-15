@@ -3,20 +3,25 @@ import s from "./components/Site.module.css";
 import {Adidas} from "./components/pages/Adidas";
 import {Abibas} from "./components/pages/Abibas";
 import {Puma} from "./components/pages/Puma";
-import {Navigate, NavLink, Route, Routes} from "react-router-dom";
+import {Navigate, NavLink, Route, Routes, useSearchParams} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
 import {NavWrapper} from "./components/_style";
 import {Model} from "./components/pages/Model";
+import {Prices} from "./components/pages/Prices";
 
 
 const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
     ABIBAS: '/abibas',
+    PRICES: '/prices',
     ERROR404: '/error404',
 }
 
 function App() {
+
+
+
     return (
         <div>
             <div className={s.header}><h1>HEADER</h1></div>
@@ -31,6 +36,9 @@ function App() {
                     <NavWrapper><NavLink to={PATH.ABIBAS} className={({isActive}) => isActive ? s.active : s.navLink}>
                         Abibas</NavLink>
                     </NavWrapper>
+                    <NavWrapper><NavLink to={PATH.PRICES} className={({isActive}) => isActive ? s.active : s.navLink}>
+                        Цены для оптовиков</NavLink>
+                    </NavWrapper>
                 </div>
                 <div className={s.content}>
                     <Routes>
@@ -39,6 +47,7 @@ function App() {
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
+                        <Route path={PATH.PRICES} element={<Prices/>}/>
 
                         <Route path="/:model/:id" element={<Model/>}/>
 
