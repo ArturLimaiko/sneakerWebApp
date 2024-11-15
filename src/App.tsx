@@ -3,7 +3,7 @@ import s from "./components/Site.module.css";
 import {Adidas} from "./components/pages/Adidas";
 import {Abibas} from "./components/pages/Abibas";
 import {Puma} from "./components/pages/Puma";
-import {Navigate, NavLink, Route, Routes, useSearchParams} from "react-router-dom";
+import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
 import {NavWrapper} from "./components/_style";
 import {Model} from "./components/pages/Model";
