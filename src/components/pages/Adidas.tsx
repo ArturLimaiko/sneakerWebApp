@@ -42,7 +42,6 @@ export const Adidas = () => {
     return (
         <div>
             <h2> ADIDAS</h2>
-
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
