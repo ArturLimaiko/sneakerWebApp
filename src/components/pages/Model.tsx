@@ -3,7 +3,6 @@ import {adidasArr, AdidasItem} from "./Adidas";
 import {pumaArr, PumaItem} from "./Puma";
 import {useParams} from "react-router-dom";
 
-
 export type ModelType = {
     [key: string]: (AdidasItem[] | PumaItem[]);
 }
@@ -13,6 +12,7 @@ export type ModelType = {
 const crossModels: ModelType = {
     puma: pumaArr,
     adidas: adidasArr
+    //самостоятельно сделать abibas
 }
 
 export const Model = () => {

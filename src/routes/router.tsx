@@ -6,6 +6,7 @@ import {Adidas} from "../components/pages/Adidas";
 import {Puma} from "../components/pages/Puma";
 import {Abibas} from "../components/pages/Abibas";
 import {Prices} from "../components/pages/Prices";
+import {Model} from "../components/pages/Model";
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -13,6 +14,8 @@ const PATH = {
     ABIBAS: '/abibas',
     PRICES: '/prices',
     ERROR404: '/error404',
+    MODEL: '/:model/:id'
+
 } as const
 
 export const router = createBrowserRouter([
@@ -40,7 +43,11 @@ export const router = createBrowserRouter([
             {
                 path: PATH.ERROR404,
                 element: <Error404/>
-            }
+            },
+            {
+                path: PATH.MODEL,
+                element: <Model/>
+            },
         ]
     }
 ]);
